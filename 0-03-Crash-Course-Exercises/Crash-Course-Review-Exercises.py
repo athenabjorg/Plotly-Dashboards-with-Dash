@@ -1,5 +1,5 @@
 ##################################################################
-####### Crash Course Review Exercises 
+####### Crash Course Review Exercises
 #########################################################
 
 #########################################################
@@ -10,13 +10,14 @@
 #######
 # TASK 1: Import pandas and numpy
 ######
-
+import numpy as np
+import pandas as pd
 
 
 #######
 # TASK 2: Set Numpy's random number generator seed to 101
 ######
-
+np.random.seed(101)
 
 
 #######
@@ -24,7 +25,7 @@
 #         random integers from 1-100. (Keep in mind that the upper
 #         limit may be exclusive.)
 ######
-
+mat = np.random.randint(1,101,(100,5))
 
 
 #######
@@ -32,7 +33,7 @@
 #         Simple pass in the numpy array into that function to get back a
 #         dataframe. Pandas will auto label the columns to 0-4
 ######
-
+df = pd.DataFrame(data=mat)
 
 
 #######
@@ -40,8 +41,8 @@
 #         (https://stackoverflow.com/questions/11346283/renaming-columns-in-pandas)
 #         to rename the pandas columns to be ['f1','f2','f3','f4','label'].
 ######
-
-
+df.columns = [['f1','f2','f3','f4','label']]
+print(df)
 
 #######
 # TASK 6: Alright, all the other tasks were hopefully straightforward.
@@ -52,3 +53,6 @@
 #         between 0 and 100. (Hint: Use numpy to create the numbers, then pass
 #         it in to pd.DataFrame(), check out the data= and index= parameters
 #         for that call.)
+
+mat = np.random.randint(0, 101,(50,4))
+df = pd.DataFrame(data=mat, columns=['A','B','C','D'])
